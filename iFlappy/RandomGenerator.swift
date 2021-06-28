@@ -1,0 +1,22 @@
+//
+//  RandomGenerator.swift
+//  iFlappy
+//
+//  Created by Jin Tan Ruan on 06/05/19.
+//
+
+import Foundation
+import CoreGraphics
+
+public extension CGFloat {
+    
+    static func random() -> CGFloat {
+        let randomFloat = Float(arc4random())
+        let max : Float = 0xFFFFFFFF
+        return CGFloat(randomFloat/max)
+    }
+    
+    static func random(min : CGFloat, max: CGFloat) -> CGFloat {
+        return CGFloat.random() * (max - min) + min
+    }
+}
